@@ -1,0 +1,24 @@
+
+backend:
+  name: github
+  repo: persoalan/persoalan
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "ms"
+
+collections:
+  - name: "artikel"
+    label: "Artikel"
+    folder: "content/artikel"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tajuk", name: "title", widget: "string" }
+      - { label: "Tarikh", name: "date", widget: "datetime" }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Kesihatan", "Agama", "Pendidikan", "Teknologi", "Kewangan", "Kehidupan"] }
+      - { label: "Ringkasan", name: "description", widget: "text" }
+      - { label: "Gambar", name: "image", widget: "image", required: false }
+      - { label: "Kandungan", name: "body", widget: "markdown" }
