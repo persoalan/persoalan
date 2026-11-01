@@ -2,7 +2,6 @@
 export default function (eleventyConfig) {
   // Salin halaman website sedia ada
   eleventyConfig.addPassthroughCopy("index.html");
-  eleventyConfig.addPassthroughCopy("kesihatan");
   eleventyConfig.addPassthroughCopy("admin");
 
   // Fail SEO
