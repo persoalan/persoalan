@@ -1,0 +1,6 @@
+
+{
+  "layout": "article.njk",
+  "permalink": "/{{ category | slugify }}/{{ page.fileSlug }}/index.html",
+  "tags": ["artikel"]
+}
