@@ -21,4 +21,15 @@ collections:
       - { label: "Kategori", name: "category", widget: "select", options: ["Kesihatan", "Agama", "Pendidikan", "Teknologi", "Kewangan", "Kehidupan"] }
       - { label: "Ringkasan", name: "description", widget: "text" }
       - { label: "Gambar", name: "image", widget: "image", required: false }
-      - { label: "Kandungan", name: "body", widget: "markdown" }
+      - { label: "Kandungan", name: "body", widget: "markdown" } 
+  - name: "kategori"
+    label: "Kategori"
+    folder: "content/kategori"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "name"
+    fields:
+      - { label: "Nama Kategori", name: "name", widget: "string" }
+      - { label: "Penerangan", name: "description", widget: "text" }
+      - { label: "Kandungan Pengenalan", name: "body", widget: "markdown", required: false }
+
