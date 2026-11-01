@@ -48,7 +48,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#d30b16}
 <section class="section" id="soalan" style="padding-top:0"><div class="wrap"><h2>Persoalan kesihatan</h2><p class="lead">Baca artikel kesihatan yang telah diterbitkan dan terokai topik akan datang.</p><div class="questions" id="questionList">
 {% for post in collections.artikel | reverse %}
 {% if post.data.category == "Kesihatan" %}
-<article class="question">
+<article class="question" data-search="{{ post.data.title }} {{ post.data.description }} {{ post.data.category }}">
   <div class="tag">
     KESIHATAN · ARTIKEL TERSEDIA
   </div>
