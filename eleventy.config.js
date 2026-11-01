@@ -15,11 +15,11 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("node_modules/**");
   eleventyConfig.ignores.add("_site/**");
 
-  return {
-    dir: {
-      input: ".",
-      includes: "_includes",
-      output: "_site"
-    }
-  };
-}
+return {
+  dir: {
+    input: ".",
+    includes: "_includes",
+    output: "_site"
+  },
+  templateFormats: ["md", "njk"]
+};
