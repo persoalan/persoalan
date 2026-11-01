@@ -18,7 +18,14 @@ collections:
     fields:
       - { label: "Tajuk", name: "title", widget: "string" }
       - { label: "Tarikh", name: "date", widget: "datetime" }
-      - { label: "Kategori", name: "category", widget: "select", options: ["Kesihatan", "Agama", "Pendidikan", "Teknologi", "Kewangan", "Kehidupan"] }
+      
+      - label: "Kategori"
+        name: "category"
+        widget: "relation"
+        collection: "kategori"
+        search_fields: ["name"]
+        display_fields: ["name"]
+        value_field: "name"
       - { label: "Ringkasan", name: "description", widget: "text" }
       - { label: "Gambar", name: "image", widget: "image", required: false }
       - { label: "Kandungan", name: "body", widget: "markdown" } 
