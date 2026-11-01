@@ -1,12 +1,15 @@
 
 export default function (eleventyConfig) {
-  // Salin halaman dan aset website sedia ada
+  // Salin halaman website sedia ada
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("kesihatan");
   eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("images");
 
-  // Abaikan fail dan folder sistem
+  // Fail SEO
+  eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("sitemap.xml");
+
+  // Abaikan folder sistem
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add("netlify/**");
   eleventyConfig.ignores.add("node_modules/**");
