@@ -3,12 +3,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("admin");
 
+  eleventyConfig.addPassthroughCopy("index.html");
+  eleventyConfig.addPassthroughCopy("kesihatan");
+
+  eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("netlify/**");
+
   return {
     dir: {
-      input: "content",
+      input: ".",
       output: "_site"
-    },
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk"
+    }
   };
 }
