@@ -6,6 +6,9 @@ eleventyConfig.addPassthroughCopy(
   "kesihatan/kenapa-perlu-tidur-cukup"
 );
   eleventyConfig.addPassthroughCopy("admin");
+eleventyConfig.addPassthroughCopy("favicon.ico");
+eleventyConfig.addPassthroughCopy("favicon.png");
+
 
   // Fail SEO
   eleventyConfig.addPassthroughCopy("robots.txt");
