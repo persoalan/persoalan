@@ -4,7 +4,7 @@ description: Kenali Persoalan.com, sebuah portal ilmu dan perkongsian maklumat
   dalam Bahasa Melayu yang membincangkan kesihatan, agama, pendidikan,
   teknologi, kewangan dan kehidupan.
 image: /images/uploads/bold-p_-logo-on-red.png
-show_in_menu: false
+show_in_menu: true
 ---
 ## Selamat Datang ke Persoalan.com
 
