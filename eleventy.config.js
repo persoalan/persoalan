@@ -1,14 +1,16 @@
 
 export default function (eleventyConfig) {
-  // Salin halaman website sedia ada
-eleventyConfig.addPassthroughCopy(
-  "kesihatan/kenapa-perlu-tidur-cukup"
-);
-  eleventyConfig.addPassthroughCopy("admin");
-eleventyConfig.addPassthroughCopy("favicon.ico");
-eleventyConfig.addPassthroughCopy("favicon.png");
-  eleventyConfig.addPassthroughCopy("images");
 
+  // Salin artikel statik sedia ada
+  eleventyConfig.addPassthroughCopy(
+    "kesihatan/kenapa-perlu-tidur-cukup"
+  );
+
+  // Fail CMS dan gambar
+  eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("favicon.png");
+  eleventyConfig.addPassthroughCopy("images");
 
   // Fail SEO
   eleventyConfig.addPassthroughCopy("robots.txt");
@@ -20,13 +22,13 @@ eleventyConfig.addPassthroughCopy("favicon.png");
   eleventyConfig.ignores.add("node_modules/**");
   eleventyConfig.ignores.add("_site/**");
 
-  
-return {
-  dir: {
-    input: ".",
-    includes: "_includes",
-    output: "_site"
-  },
-  templateFormats: ["md", "njk", "html"],
-  htmlTemplateEngine: "njk"
-};
+  return {
+    dir: {
+      input: ".",
+      includes: "_includes",
+      output: "_site"
+    },
+    templateFormats: ["md", "njk", "html"],
+    htmlTemplateEngine: "njk"
+  };
+}
