@@ -20,12 +20,13 @@ eleventyConfig.addPassthroughCopy("favicon.png");
   eleventyConfig.ignores.add("node_modules/**");
   eleventyConfig.ignores.add("_site/**");
 
-  return {
-    dir: {
-      input: ".",
-      includes: "_includes",
-      output: "_site"
-    },
-   templateFormats: ["md", "njk", "html"]
-  };
-}
+  
+return {
+  dir: {
+    input: ".",
+    includes: "_includes",
+    output: "_site"
+  },
+  templateFormats: ["md", "njk", "html"],
+  htmlTemplateEngine: "njk"
+};
