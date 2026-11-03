@@ -206,10 +206,18 @@
     <div class="header-inner">
       <a href="/" class="logo">persoalan<span>.com</span></a>
 
-      <nav class="navigation" aria-label="Navigasi utama">
-        <a href="/">Utama</a>
-        <a href="/kesihatan/">Kesihatan</a>
-      </nav>
+
+<nav class="navigation" aria-label="Navigasi utama">
+  <a href="/">Utama</a>
+  <a href="/kesihatan/">Kesihatan</a>
+
+  {% for item in collections.halaman | sort(attribute="data.menu_order") %}
+    {% if item.data.show_in_menu %}
+      <a href="{{ item.url }}">{{ item.data.title }}</a>
+    {% endif %}
+  {% endfor %}
+</nav>
+
     </div>
   </header>
 
