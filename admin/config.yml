@@ -39,6 +39,7 @@ collections:
       - { label: "Nama Kategori", name: "name", widget: "string" }
       - { label: "Penerangan", name: "description", widget: "text" }
       - { label: "Kandungan Pengenalan", name: "body", widget: "markdown", required: false }
+ 
   - name: "halaman"
     label: "Halaman"
     folder: "content/halaman"
@@ -48,6 +49,6 @@ collections:
       - { label: "Tajuk Halaman", name: "title", widget: "string" }
       - { label: "Ringkasan SEO", name: "description", widget: "text" }
       - { label: "Gambar Utama", name: "image", widget: "image", required: false }
+      - { label: "Paparkan dalam Menu Utama", name: "show_in_menu", widget: "boolean", default: false, required: false }
+      - { label: "Susunan Menu", name: "menu_order", widget: "number", default: 10, value_type: "int", min: 1, required: false }
       - { label: "Kandungan", name: "body", widget: "markdown" }
-
-
