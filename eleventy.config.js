@@ -8,6 +8,7 @@ eleventyConfig.addPassthroughCopy(
   eleventyConfig.addPassthroughCopy("admin");
 eleventyConfig.addPassthroughCopy("favicon.ico");
 eleventyConfig.addPassthroughCopy("favicon.png");
+  eleventyConfig.addPassthroughCopy("images");
 
 
   // Fail SEO
