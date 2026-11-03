@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title }} | Persoalan.com</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="theme-color" content="#99000D">
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://persoalan.com{{ page.url }}">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
+  <style>
+    :root {
+      --maroon: #99000D;
+      --maroon-dark: #76000A;
+      --ink: #172033;
+      --muted: #64748b;
+      --border: #e9e1e1;
+      --background: #faf8f8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--ink);
+      line-height: 1.85;
+    }
+
+    a { color: var(--maroon); }
+
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--maroon);
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: #737b87; }
+
+    .navigation {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      color: #344054;
+      font-size: 13px;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #76000A, #99000D);
+      color: white;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 24px 65px;
+    }
+
+    .breadcrumbs {
+      font-size: 13px;
+      margin-bottom: 20px;
+      opacity: .9;
+    }
+
+    .breadcrumbs a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.2;
+      margin: 0 0 18px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .content-wrapper {
+      max-width: 900px;
+      margin: 36px auto 70px;
+      padding: 0 24px;
+    }
+
+    .page-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 40px 45px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.025);
+    }
+
+    .page-content {
+      font-size: 16px;
+      line-height: 1.95;
+      overflow-wrap: break-word;
+    }
+
+    .page-content h2 {
+      font-size: 25px;
+      line-height: 1.4;
+      margin: 35px 0 14px;
+    }
+
+    .page-content h3 {
+      font-size: 20px;
+      margin: 25px 0 12px;
+    }
+
+    .page-content p {
+      margin: 0 0 20px;
+    }
+
+    .page-content ul,
+    .page-content ol {
+      padding-left: 24px;
+    }
+
+    .page-content img,
+    .featured-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .featured-image {
+      width: 100%;
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    .page-content blockquote {
+      border-left: 4px solid var(--maroon);
+      background: #fff7f7;
+      padding: 15px 20px;
+      margin: 24px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .site-footer {
+      background: white;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      padding: 30px 20px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { padding: 14px 18px; }
+      .logo { font-size: 20px; }
+      .navigation { gap: 12px; }
+      .navigation a { font-size: 12px; }
+      .hero-inner { padding: 38px 20px 45px; }
+      .hero h1 { font-size: 32px; }
+      .content-wrapper {
+        padding: 0 14px;
+        margin-top: 20px;
+      }
+      .page-card { padding: 24px 20px; }
+      .page-content { font-size: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">persoalan<span>.com</span></a>
+
+      <nav class="navigation" aria-label="Navigasi utama">
+        <a href="/">Utama</a>
+        <a href="/kesihatan/">Kesihatan</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="breadcrumbs">
+        <a href="/">Utama</a> / {{ title }}
+      </div>
+
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+    </div>
+  </section>
+
+  <main class="content-wrapper">
+    <div class="page-card">
+
+      {% if image %}
+      <img class="featured-image"
+           src="{{ image }}"
+           alt="{{ title }}">
+      {% endif %}
+
+      <div class="page-content">
+        {{ content | safe }}
+      </div>
+
+      <a href="/" class="back-link">
+        ← Kembali ke halaman utama
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    © Persoalan.com · Portal Ilmu dan Persoalan
+  </footer>
+</body>
+</html>
