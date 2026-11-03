@@ -26,6 +26,6 @@ eleventyConfig.addPassthroughCopy("favicon.png");
       includes: "_includes",
       output: "_site"
     },
-    templateFormats: ["md", "njk"]
+   templateFormats: ["md", "njk", "html"]
   };
 }
