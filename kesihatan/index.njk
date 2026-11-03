@@ -66,7 +66,25 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#d30b16}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap nav"><a class="logo" href="/" aria-label="Persoalan.com, halaman utama">persoalan<span>.com</span></a><nav aria-label="Navigasi utama"><a href="/">Utama</a><a href="#topik">Topik Kesihatan</a><a href="#soalan">Persoalan</a></nav></div></header>
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="Persoalan.com, halaman utama">
+      persoalan<span>.com</span>
+    </a>
+
+    <nav aria-label="Navigasi utama">
+      <a href="/">Utama</a>
+      <a href="#topik">Topik Kesihatan</a>
+      <a href="#soalan">Persoalan</a>
+
+      {% for item in collections.halaman | sort(attribute="data.menu_order") %}
+        {% if item.data.show_in_menu %}
+          <a href="{{ item.url }}">{{ item.data.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</header>
 <main>
 <section class="hero"><div class="wrap"><div class="crumb"><a href="/">Utama</a> / Kesihatan</div><div class="eyebrow">Kategori ilmu</div><h1>Kesihatan</h1><p>Terokai persoalan tentang tubuh badan, pemakanan, tidur, kesihatan keluarga dan gaya hidup sihat. Ilmu yang jelas untuk membantu anda membuat keputusan lebih bermaklumat.</p><form id="searchForm" class="search" role="search"><input id="searchInput" type="search" aria-label="Cari persoalan kesihatan" placeholder="Cari persoalan kesihatan..." required><button type="submit">Cari</button></form></div></section>
 <section class="section" id="topik"><div class="wrap"><h2>Terokai topik kesihatan</h2><p class="lead">Mulakan dengan topik yang dekat dengan kehidupan seharian.</p><div class="grid"><article class="card"><div class="symbol" aria-hidden="true">🥗</div><h3>Pemakanan</h3><p>Asas pemakanan seimbang dan pilihan makanan harian.</p></article><article class="card"><div class="symbol" aria-hidden="true">🌙</div><h3>Tidur & Rehat</h3><p>Peranan tidur dan rehat dalam kesejahteraan tubuh.</p></article><article class="card"><div class="symbol" aria-hidden="true">👨‍👩‍👧</div><h3>Kesihatan Keluarga</h3><p>Persoalan umum tentang penjagaan kesihatan keluarga.</p></article><article class="card"><div class="symbol" aria-hidden="true">🏃</div><h3>Gaya Hidup Aktif</h3><p>Aktiviti fizikal dan tabiat harian yang lebih sihat.</p></article><article class="card"><div class="symbol" aria-hidden="true">🧠</div><h3>Kesihatan Mental</h3><p>Pengetahuan asas tentang emosi, tekanan dan sokongan.</p></article><article class="card"><div class="symbol" aria-hidden="true">🩺</div><h3>Pencegahan</h3><p>Kesedaran tentang pemeriksaan dan langkah pencegahan.</p></article></div></div></section>
