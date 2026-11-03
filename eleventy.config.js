@@ -1,7 +1,6 @@
 
 export default function (eleventyConfig) {
   // Salin halaman website sedia ada
-  eleventyConfig.addPassthroughCopy("index.html");  
 eleventyConfig.addPassthroughCopy(
   "kesihatan/kenapa-perlu-tidur-cukup"
 );
