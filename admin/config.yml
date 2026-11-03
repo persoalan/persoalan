@@ -39,4 +39,15 @@ collections:
       - { label: "Nama Kategori", name: "name", widget: "string" }
       - { label: "Penerangan", name: "description", widget: "text" }
       - { label: "Kandungan Pengenalan", name: "body", widget: "markdown", required: false }
+  - name: "halaman"
+    label: "Halaman"
+    folder: "content/halaman"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tajuk Halaman", name: "title", widget: "string" }
+      - { label: "Ringkasan SEO", name: "description", widget: "text" }
+      - { label: "Gambar Utama", name: "image", widget: "image", required: false }
+      - { label: "Kandungan", name: "body", widget: "markdown" }
+
 
