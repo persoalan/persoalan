@@ -72,7 +72,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#d30b16}
     <p class="lead">Pelbagai bidang ilmu, satu tempat untuk bermula.</p>
 
     <div class="grid">
-      {% for item in collections.kategori %}
+      {% set susunan = ["Kesihatan", "Agama", "Teknologi", "Kewangan", "Pendidikan", "Kehidupan", "Biodata", "Sukan", "Pengetahuan Am"] %}
+{% for namaKategori in susunan %}
+  {% for item in collections.kategori %}
+    {% if item.data.name == namaKategori %}
         {% set nama = item.data.name %}
         {% set slug = nama | slugify %}
 
@@ -92,7 +95,18 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#d30b16}
           <h3>{{ nama }}</h3>
           <p>{{ item.data.description }}</p>
         </a>
-      {% endfor %}
+          {% endif %}
+  {% endfor %}
+{% endfor %}
+{% for item in collections.kategori %}
+  {% if item.data.name not in susunan %}
+    <a class="card category-link" href="{{ item.url }}">
+      <div class="symbol" aria-hidden="true">📖</div>
+      <h3>{{ item.data.name }}</h3>
+      <p>{{ item.data.description }}</p>
+    </a>
+  {% endif %}
+{% endfor %}
     </div>
   </div>
 </section>
