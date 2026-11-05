@@ -1,9 +1,10 @@
 ---
 title: Apakah hukum menjual rokok?
-date: '2024-10-05'
-category: Belum Dikategorikan
-description: 'Kami telah menjumpai tulisan Ustaz Dr Zaharuddin Abdul Rahman (UZAR) pada tahun 2013. Jawapan : Menjual
-  rokok adalah HARAM dan hasil dari jualan rokok juga'
+date: 2024-10-05
+category: Agama
+description: "Kami telah menjumpai tulisan Ustaz Dr Zaharuddin Abdul Rahman
+  (UZAR) pada tahun 2013. Jawapan : Menjual rokok adalah HARAM dan hasil dari
+  jualan rokok juga"
 ---
 
 Kami telah menjumpai tulisan Ustaz Dr Zaharuddin Abdul Rahman (UZAR) pada tahun 2013.
