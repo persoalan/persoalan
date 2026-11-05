@@ -3,6 +3,7 @@ title: Iklan & Kerjasama
 description: Ingin mengiklankan produk atau jenama anda? Terokai peluang iklan
   banner, artikel tajaan, ulasan produk dan kerjasama pemasaran bersama
   Persoalan.com.
+image: /images/uploads/persoalan.com-iklan-kerjasama.png
 show_in_menu: true
 menu_order: 10
 ---
