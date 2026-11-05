@@ -65,7 +65,37 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#d30b16}
 <main>
 <section class="hero"><div class="wrap"><div class="eyebrow">Portal ilmu & komuniti</div><h1>Setiap Persoalan,<br>Ada Jawapannya.</h1><p>Ruang untuk meneroka ilmu, memahami pelbagai topik dan mencari jawapan kepada persoalan kehidupan.</p><form class="search" id="searchForm" role="search"><input id="searchInput" type="search" aria-label="Cari persoalan" placeholder="Apa persoalan anda hari ini?" required><button type="submit">Cari</button></form><div class="hint" id="searchStatus" role="status" aria-live="polite"></div></div></section>
 
+
 <section class="section" id="kategori">
+  <div class="wrap">
+    <h2>Terokai mengikut kategori</h2>
+    <p class="lead">Pelbagai bidang ilmu, satu tempat untuk bermula.</p>
+
+    <div class="grid">
+      {% for item in collections.kategori %}
+        {% set nama = item.data.name %}
+        {% set slug = nama | slugify %}
+
+        <a class="card category-link" href="/{{ slug }}/">
+          <div class="symbol" aria-hidden="true">
+            {% if nama == "Kesihatan" %}🩺
+            {% elif nama == "Teknologi" %}💻
+            {% elif nama == "Kewangan" %}💰
+            {% elif nama == "Pendidikan" %}📚
+            {% elif nama == "Kehidupan" %}🌱
+            {% elif nama == "Pengetahuan Am" %}🌍
+            {% elif nama == "Agama" %}🕌
+            {% elif nama == "Biodata" %}👤
+            {% else %}📖
+            {% endif %}
+          </div>
+          <h3>{{ nama }}</h3>
+          <p>{{ item.data.description }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
   <div class="wrap">
     <h2>Terokai mengikut kategori</h2>
     <p class="lead">Pelbagai bidang ilmu, satu tempat untuk bermula.</p>
