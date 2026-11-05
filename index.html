@@ -408,20 +408,102 @@
   document.getElementById('year').textContent =
     new Date().getFullYear();
 
-  const form = document.getElementById('searchForm');
-  const input = document.getElementById('searchInput');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+const form = document.getElementById('searchForm');
+const input = document.getElementById('searchInput');
+const status = document.getElementById('searchStatus');
 
-    const query = input.value.trim();
+const results = document.createElement('div');
+results.id = 'searchResults';
+results.style.cssText = `
+  max-width: 800px;
+  margin: 25px auto 0;
+  text-align: left;
+  display: grid;
+  gap: 12px;
+`;
 
-    if (!query) return;
+form.parentElement.appendChild(results);
 
-    window.location.href =
-      'https://www.google.com/search?q=' +
-      encodeURIComponent('site:persoalan.com ' + query);
-  });
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
+
+form.addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const query = input.value.trim().toLocaleLowerCase('ms');
+
+  if (!query) return;
+
+  status.textContent = 'Sedang mencari artikel...';
+  results.replaceChildren();
+
+  try {
+    const response = await fetch('/search-index.json');
+
+    if (!response.ok) throw new Error('Gagal memuatkan indeks');
+
+    const articles = await response.json();
+
+    const matches = articles.filter(article => {
+      const text = [
+        article.title,
+        article.category,
+        article.description
+      ].join(' ').toLocaleLowerCase('ms');
+
+      return text.includes(query);
+    });
+
+    status.textContent = matches.length
+      ? `${matches.length} artikel ditemui.`
+      : 'Tiada artikel ditemui. Cuba kata kunci lain.';
+
+    matches.slice(0, 20).forEach(article => {
+      const card = document.createElement('a');
+      card.href = article.url;
+      card.style.cssText = `
+        display: block;
+        background: white;
+        color: #15233b;
+        padding: 18px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #eadde0;
+      `;
+
+      card.innerHTML = `
+        <div style="font-size:11px;color:#99000D;font-weight:700">
+          ${escapeHTML(article.category)}
+        </div>
+        <strong style="display:block;margin:5px 0">
+          ${escapeHTML(article.title)}
+        </strong>
+        <div style="font-size:12px;color:#65748b">
+          ${escapeHTML(article.description)}
+        </div>
+      `;
+
+      results.appendChild(card);
+    });
+
+    if (matches.length > 20) {
+      status.textContent += ' Memaparkan 20 hasil pertama.';
+    }
+
+  } catch (error) {
+    status.textContent =
+      'Carian tidak dapat dimuatkan. Sila cuba lagi.';
+  }
+});
+
 </script>
 
 </body>
