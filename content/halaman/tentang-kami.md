@@ -48,4 +48,11 @@ Setiap hari membawa persoalan baharu.
 
 Di Persoalan.com, kami percaya bahawa keinginan untuk mengetahui sesuatu ialah langkah pertama ke arah kehidupan yang lebih berilmu.
 
-**Persoalan bermula di sini. Ilmu berkembang tanpa henti.**
+**Persoalan bermula di sini. Ilmu berkembang tanpa henti.**\
+\
+\
+**ANDA ADA PERSOALAN?**
+
+EMELKAN KEPADA KAMI DI : 
+
+***persoalanmy@gmail.com***
