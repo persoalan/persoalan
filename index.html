@@ -1,164 +1,428 @@
+
 <!doctype html>
 <html lang="ms">
 <head>
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Persoalan.com — terokai jawapan kepada persoalan harian tentang kesihatan, teknologi, kewangan, pendidikan dan kehidupan.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#d30b16">
-<link rel="canonical" href="https://persoalan.com/">
-<title>Persoalan.com — Setiap Persoalan Ada Jawapannya</title>
-<style>
-:root{--navy:#102238;--teal:#0e9488;--ink:#15263a;--muted:#64748b;--line:#e4eaf0;--bg:#f7f9fc}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #f4b942;outline-offset:3px}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}.top{background:white;border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}.logo{font-weight:850;font-size:1.55rem;letter-spacing:-.06em;color:var(--navy)}.logo span{color:var(--teal)}nav{display:flex;gap:24px;font-size:.94rem;color:#40536a}nav a:hover{color:var(--teal)}.hero{background:linear-gradient(125deg,#102238,#193b53);color:white;text-align:center;padding:95px 0 105px}.eyebrow{color:#80e1d4;font-weight:700;font-size:.83rem;letter-spacing:.13em;text-transform:uppercase}.hero h1{font-size:clamp(2.3rem,5.3vw,4.3rem);line-height:1.14;letter-spacing:-.055em;max-width:850px;margin:17px auto}.hero p{color:#c6d6e2;max-width:620px;margin:0 auto 30px}.search{display:flex;align-items:center;max-width:680px;margin:auto;background:white;border-radius:13px;padding:7px;box-shadow:0 12px 38px #0002}.search input{flex:1;min-width:0;border:0;padding:15px;font:inherit;border-radius:10px}.search button{border:0;background:var(--teal);color:white;border-radius:9px;padding:15px 23px;font:inherit;font-weight:700;cursor:pointer}.search button:hover{background:#087b72}.hint{min-height:24px;margin-top:13px;color:#c8f6ed;font-size:.9rem}.section{padding:65px 0}.section h2{font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-.035em;margin:0 0 7px}.lead{color:var(--muted);margin:0 0 27px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:15px;padding:24px;box-shadow:0 4px 20px #1a355108}.symbol{font-size:1.7rem}.card h3{margin:13px 0 6px}.card p{color:var(--muted);font-size:.93rem;margin:0}.questions{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.question{background:white;border:1px solid var(--line);border-radius:12px;padding:22px}.tag{font-size:.75rem;color:#0b8076;font-weight:700}.question h3{font-size:1.05rem;margin:8px 0}.question p{color:var(--muted);font-size:.9rem;margin:0}.about{background:#e9f4f3;border-radius:18px;padding:38px}.about p{max-width:760px;color:#476274}.footer{background:var(--navy);color:#d3e1e9;padding:30px 0;font-size:.9rem}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.hidden{display:none!important}@media(max-width:700px){.nav{align-items:flex-start;flex-direction:column;padding:17px 0;gap:9px}nav{gap:15px;flex-wrap:wrap;font-size:.86rem}.hero{padding:70px 0 75px}.search button{padding:14px}.grid,.questions{grid-template-columns:1fr}.section{padding:45px 0}.about{padding:25px}}
-.category-link{display:block;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}.category-link:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 10px 28px #1a355119}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Persoalan.com — Setiap Persoalan, Ada Jawapannya</title>
+  <meta name="description" content="Persoalan.com ialah portal ilmu Bahasa Melayu. Terokai artikel kesihatan, agama, teknologi, kewangan, pendidikan, kehidupan, biodata, sukan dan pengetahuan am.">
+  <link rel="canonical" href="https://persoalan.com/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
-/* Persoalan.com — identiti merah, putih dan perak */
-:root {
-  --navy: #102238;
-  --teal: #0e9488;
-}
-body{background:var(--bg);color:var(--ink)}
-.top{background:#fff;border-bottom:1px solid #eee2e2}
-.logo{color:#bd0913!important;letter-spacing:-.055em;font-weight:900}
-.logo span{color:#777!important}
-nav{color:#393939}nav a:hover{color:#c60813}
-.hero{
-  background:linear-gradient(135deg,#430D1B 0%,#650B19 52%,#390A16 100%);
-  color:#fff;
-}
-.eyebrow{color:#ffe2e2}.hero p{color:#fff0f0}.hint{color:#fff0f0}
-.search button{background:#650B19}
-.search button:hover{background:#430D1B}
-.search{box-shadow:0 12px 35px #6200083d}
-.card,.question{border-color:#eadfdf;box-shadow:0 4px 18px #5e11100a}
-.category-link:hover{border-color:#d30b16;box-shadow:0 10px 28px #6b000017}
-.tag{color:#b60813}.about{background:#fff0f0}.about p{color:#5c4747}
-.footer{background:#2b2022;color:#f0e6e6}
-a:focus-visible,button:focus-visible,input:focus-visible{outline-color:#d30b16}
+  <style>
+    :root {
+      --maroon: #650B19;
+      --maroon-dark: #390A16;
+      --red: #99000D;
+      --ink: #15233b;
+      --muted: #65748b;
+      --bg: #f5f7fb;
+      --border: #e9dce0;
+    }
 
-</style>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1100px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .header {
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header-inner {
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--red);
+      font-weight: 850;
+      font-size: 22px;
+      letter-spacing: -0.8px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav a:hover,
+    .footer a:hover { color: #c22539; }
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        #430D1B 0%,
+        #650B19 52%,
+        #390A16 100%
+      );
+      color: white;
+      text-align: center;
+      padding: 88px 20px 94px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: .85;
+      margin: 0 0 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      margin: 0 0 18px;
+      font-weight: 850;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      font-size: 15px;
+      color: #f5dfe4;
+    }
+
+    .search {
+      display: flex;
+      background: white;
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 6px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px #0002;
+    }
+
+    .search input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      outline: none;
+      padding: 12px 14px;
+      font-size: 14px;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .search button {
+      background: #650B19;
+      border: 0;
+      color: white;
+      border-radius: 7px;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .search button:hover { background: #99000D; }
+
+    .search-note {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #f3cbd4;
+    }
+
+    .section { padding: 65px 0 85px; }
+
+    .section h2 {
+      font-size: clamp(23px, 3vw, 30px);
+      line-height: 1.3;
+      letter-spacing: -.6px;
+      margin: 0 0 8px;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin: 0 0 28px;
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: block;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      min-height: 175px;
+      box-shadow: 0 4px 14px #1a243008;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #bc8994;
+      box-shadow: 0 12px 26px #1a243015;
+    }
+
+    .symbol {
+      font-size: 25px;
+      margin-bottom: 13px;
+      line-height: 1.2;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin: 0 0 8px;
+      font-weight: 750;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .footer {
+      background: white;
+      border-top: 1px solid #e9e9ed;
+      padding: 25px 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 750px) {
+      .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+        gap: 8px;
+      }
+
+      .nav {
+        justify-content: center;
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      .hero { padding: 65px 18px 75px; }
+
+      .grid { grid-template-columns: repeat(2, 1fr); }
+
+      .card { padding: 20px; min-height: 165px; }
+    }
+
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 30px); }
+
+      .grid { grid-template-columns: 1fr; gap: 12px; }
+
+      .card { min-height: auto; padding: 19px; }
+
+      .section { padding: 45px 0 55px; }
+
+      .search button { padding: 12px 17px; }
+
+      .footer-inner { justify-content: center; text-align: center; }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="top">
-  <div class="wrap nav">
-    <a class="logo" href="/" aria-label="Persoalan.com, halaman utama">
-      persoalan<span>.com</span>
-    </a>
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">persoalan.com</a>
 
-    <nav aria-label="Navigasi utama">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="/">Utama</a>
       <a href="#kategori">Kategori</a>
-      <a href="#soalan">Persoalan</a>
-
-      {% for item in collections.halaman | sort(attribute="data.menu_order") %}
-        {% if item.data.show_in_menu %}
-          <a href="{{ item.url }}">{{ item.data.title }}</a>
-        {% endif %}
-      {% endfor %}
+      <a href="/tentang-kami/">Tentang Kami</a>
+      <a href="/iklan-kerjasama/">Iklan & Kerjasama</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Portal ilmu & komuniti</div><h1>Setiap Persoalan,<br>Ada Jawapannya.</h1><p>Ruang untuk meneroka ilmu, memahami pelbagai topik dan mencari jawapan kepada persoalan kehidupan.</p><form class="search" id="searchForm" role="search"><input id="searchInput" type="search" aria-label="Cari persoalan" placeholder="Apa persoalan anda hari ini?" required><button type="submit">Cari</button></form><div class="hint" id="searchStatus" role="status" aria-live="polite"></div></div></section>
 
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Portal Ilmu & Informasi</p>
 
-<section class="section" id="kategori">
-  <div class="wrap">
-    <h2>Terokai mengikut kategori</h2>
-    <p class="lead">Pelbagai bidang ilmu, satu tempat untuk bermula.</p>
+      <h1>Setiap Persoalan,<br>Ada Jawapannya.</h1>
 
-    <div class="grid">
-      {% set susunan = ["Kesihatan", "Agama", "Teknologi", "Kewangan", "Pendidikan", "Kehidupan", "Biodata", "Sukan", "Pengetahuan Am"] %}
-{% for namaKategori in susunan %}
-  {% for item in collections.kategori %}
-    {% if item.data.name == namaKategori %}
-        {% set nama = item.data.name %}
-        {% set slug = nama | slugify %}
+      <p>
+        Ruang untuk meneroka ilmu, memahami pelbagai topik
+        dan mencari jawapan kepada persoalan kehidupan.
+      </p>
 
-        <a class="card category-link" href="/{{ slug }}/">
-          <div class="symbol" aria-hidden="true">
-            {% if nama == "Kesihatan" %}🩺
-            {% elif nama == "Teknologi" %}💻
-            {% elif nama == "Kewangan" %}💰
-            {% elif nama == "Pendidikan" %}📚
-            {% elif nama == "Kehidupan" %}🌱
-            {% elif nama == "Pengetahuan Am" %}🌍
-            {% elif nama == "Agama" %}🕌
-            {% elif nama == "Biodata" %}👤
-            {% else %}📖
+      <form class="search" id="searchForm" role="search">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Apa persoalan anda hari ini?"
+          aria-label="Cari artikel"
+          required
+        >
+        <button type="submit">Cari</button>
+      </form>
+
+      <span class="search-note" id="searchStatus">
+        Carian artikel Persoalan.com
+      </span>
+    </div>
+  </section>
+
+  <section class="section" id="kategori">
+    <div class="wrap">
+      <h2>Terokai mengikut kategori</h2>
+      <p class="lead">
+        Pelbagai bidang ilmu, satu tempat untuk bermula.
+      </p>
+
+      <div class="grid">
+
+        {% set susunan = [
+          "Kesihatan",
+          "Agama",
+          "Teknologi",
+          "Kewangan",
+          "Pendidikan",
+          "Kehidupan",
+          "Biodata",
+          "Sukan",
+          "Pengetahuan Am"
+        ] %}
+
+        {% for namaKategori in susunan %}
+          {% for item in collections.kategori %}
+            {% if item.data.name == namaKategori %}
+
+              {% set nama = item.data.name %}
+              {% set slug = nama | slugify %}
+
+              <a class="card category-link"
+                 href="/{{ slug }}/">
+
+                <div class="symbol" aria-hidden="true">
+                  {% if nama == "Kesihatan" %}🩺
+                  {% elif nama == "Agama" %}🕌
+                  {% elif nama == "Teknologi" %}💻
+                  {% elif nama == "Kewangan" %}💰
+                  {% elif nama == "Pendidikan" %}📚
+                  {% elif nama == "Kehidupan" %}🌱
+                  {% elif nama == "Biodata" %}👤
+                  {% elif nama == "Sukan" %}⚽
+                  {% elif nama == "Pengetahuan Am" %}🌍
+                  {% else %}📖
+                  {% endif %}
+                </div>
+
+                <h3>{{ nama }}</h3>
+                <p>{{ item.data.description }}</p>
+
+              </a>
+
             {% endif %}
-          </div>
-          <h3>{{ nama }}</h3>
-          <p>{{ item.data.description }}</p>
-        </a>
+          {% endfor %}
+        {% endfor %}
+
+        {% for item in collections.kategori %}
+          {% if item.data.name not in susunan %}
+
+            <a class="card category-link"
+               href="{{ item.url }}">
+
+              <div class="symbol" aria-hidden="true">📖</div>
+
+              <h3>{{ item.data.name }}</h3>
+              <p>{{ item.data.description }}</p>
+
+            </a>
+
           {% endif %}
-  {% endfor %}
-{% endfor %}
-{% for item in collections.kategori %}
-  {% if item.data.name not in susunan %}
-    <a class="card category-link" href="{{ item.url }}">
-      <div class="symbol" aria-hidden="true">📖</div>
-      <h3>{{ item.data.name }}</h3>
-      <p>{{ item.data.description }}</p>
-    </a>
-  {% endif %}
-{% endfor %}
+        {% endfor %}
+
+      </div>
     </div>
-  </div>
-</section>
-  <div class="wrap">
-    <h2>Terokai mengikut kategori</h2>
-    <p class="lead">Pelbagai bidang ilmu, satu tempat untuk bermula.</p>
+  </section>
 
-    <div class="grid">
-      <a class="card category-link" href="/kesihatan/">
-        <div class="symbol" aria-hidden="true">🩺</div>
-        <h3>Kesihatan</h3>
-        <p>Kesihatan diri, keluarga dan gaya hidup sihat.</p>
-      </a>
+</main>
 
-      <a class="card category-link" href="/teknologi/">
-        <div class="symbol" aria-hidden="true">💻</div>
-        <h3>Teknologi</h3>
-        <p>Peranti, internet, AI dan dunia digital.</p>
-      </a>
+<footer class="footer">
+  <div class="wrap footer-inner">
 
-      <a class="card category-link" href="/kewangan/">
-        <div class="symbol" aria-hidden="true">💰</div>
-        <h3>Kewangan</h3>
-        <p>Asas pengurusan wang dan perancangan kewangan.</p>
-      </a>
+    <span>
+      © <span id="year">2026</span>
+      Persoalan.com. Hak cipta terpelihara.
+    </span>
 
-      <a class="card category-link" href="/pendidikan/">
-        <div class="symbol" aria-hidden="true">📚</div>
-        <h3>Pendidikan</h3>
-        <p>Belajar, kemahiran dan perkembangan ilmu.</p>
-      </a>
-
-      <a class="card category-link" href="/kehidupan/">
-        <div class="symbol" aria-hidden="true">🌱</div>
-        <h3>Kehidupan</h3>
-        <p>Persoalan harian, keluarga dan pembangunan diri.</p>
-      </a>
-
-      <a class="card category-link" href="/pengetahuan-am/">
-        <div class="symbol" aria-hidden="true">🌍</div>
-        <h3>Pengetahuan Am</h3>
-        <p>Fakta dan penjelasan tentang dunia sekeliling.</p>
-      </a>
+    <div class="footer-links">
+      <a href="/tentang-kami/">Tentang Kami</a>
+      <a href="/iklan-kerjasama/">Iklan & Kerjasama</a>
+      <a href="mailto:persoalanmy@gmail.com">Hubungi Kami</a>
     </div>
+
   </div>
-</section>
-<section class="section" id="soalan" style="padding-top:0"><div class="wrap"><h2>Persoalan untuk diterokai</h2><p class="lead">Contoh topik yang bakal diterbitkan di portal ini.</p><div class="questions" id="questionList"><article class="question" data-search="kenapa kita perlu tidur kesihatan"><div class="tag">KESIHATAN</div><h3>Kenapa manusia perlu tidur yang cukup?</h3><p>Ketahui kepentingan rehat kepada tubuh dan minda.</p></article><article class="question" data-search="bagaimana kecerdasan buatan ai berfungsi teknologi"><div class="tag">TEKNOLOGI</div><h3>Bagaimana kecerdasan buatan berfungsi?</h3><p>Pengenalan ringkas kepada konsep AI.</p></article><article class="question" data-search="bagaimana mula menyimpan wang kewangan"><div class="tag">KEWANGAN</div><h3>Bagaimana hendak mula menyimpan wang?</h3><p>Asas membina tabiat kewangan yang lebih baik.</p></article><article class="question" data-search="kenapa langit berwarna biru pengetahuan am"><div class="tag">PENGETAHUAN AM</div><h3>Kenapa langit kelihatan berwarna biru?</h3><p>Persoalan sains yang dekat dengan kehidupan.</p></article></div></div></section>
-<section class="section" id="tentang" style="padding-top:0"><div class="wrap"><div class="about"><h2>Mengenai Persoalan.com</h2><p>Persoalan.com dibangunkan sebagai portal ilmu berbahasa Melayu. Visi kami ialah menjadikannya ruang yang mudah diakses untuk mencari penjelasan, berkongsi pengetahuan dan membina komuniti yang suka bertanya. Fungsi komuniti dan bantuan AI sedang dirancang untuk fasa akan datang.</p></div></div></section>
-</main><footer class="footer"><div class="wrap"><span>© <span id="year">2026</span> Persoalan.com. Hak cipta terpelihara.</span><span>Ilmu bermula dengan persoalan.</span></div></footer>
+</footer>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const form=document.getElementById('searchForm'),input=document.getElementById('searchInput'),status=document.getElementById('searchStatus'),items=[...document.querySelectorAll('.question')];
-form.addEventListener('submit',event=>{event.preventDefault();const q=input.value.trim().toLocaleLowerCase('ms');if(!q)return;let count=0;for(const item of items){const found=(item.textContent+' '+item.dataset.search).toLocaleLowerCase('ms').includes(q);item.classList.toggle('hidden',!found);if(found)count++}status.textContent=count?`${count} persoalan contoh ditemui.`:'Tiada padanan dalam persoalan contoh. Artikel penuh akan ditambah tidak lama lagi.';document.getElementById('soalan').scrollIntoView({behavior:'smooth'});});
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+  const form = document.getElementById('searchForm');
+  const input = document.getElementById('searchInput');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const query = input.value.trim();
+
+    if (!query) return;
+
+    window.location.href =
+      'https://www.google.com/search?q=' +
+      encodeURIComponent('site:persoalan.com ' + query);
+  });
 </script>
-</body></html>
+
+</body>
+</html>
