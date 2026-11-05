@@ -1,9 +1,10 @@
 ---
 title: Apakah Beza Keropok Lekor dan Keropok Losong
-date: '2024-11-29'
-category: Belum Dikategorikan
-description: 'Jawapan: Ramai pelancong yang tertukar antara keropok lekor dan Keropok Losong. Jadi kali ini mari
-  kita rungkaipakah perbezaan ataupun persamaan yang seben'
+date: 2024-11-29
+category: Pengetahuan Am
+description: "Jawapan: Ramai pelancong yang tertukar antara keropok lekor dan
+  Keropok Losong. Jadi kali ini mari kita rungkaipakah perbezaan ataupun
+  persamaan yang seben"
 ---
 
 Jawapan:
