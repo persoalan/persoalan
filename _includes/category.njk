@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ name }} | Persoalan.com</title>
+  <meta name="description" content="{{ description }}">
+  <style>
+    :root {
+      --maroon: #650B19;
+      --dark: #430D1B;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #10213a;
+      background: #f6f8fb;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1120px; margin: auto; padding: 0 20px; }
+    header { background: white; border-bottom: 1px solid #eee; }
+    .nav {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 18px 20px;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .logo { font-weight: 800; font-size: 22px; color: #10213a; text-decoration: none; }
+    .logo span { color: var(--maroon); }
+    nav a { margin-left: 18px; color: #10213a; text-decoration: none; }
+    .hero {
+      padding: 65px 0;
+      color: white;
+      background: linear-gradient(135deg,#430D1B 0%,#650B19 52%,#390A16 100%);
+    }
+    h1 { font-size: clamp(32px,5vw,48px); margin: 0 0 12px; }
+    .hero p { max-width: 750px; }
+    main { padding: 50px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 25px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 5px 20px rgba(0,0,0,.04);
+    }
+    .card:hover { border-color: var(--maroon); }
+    .card h3 { margin: 0 0 10px; }
+    .card p { color: #52647d; margin: 0; }
+    footer { text-align: center; padding: 30px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="/">persoalan<span>.com</span></a>
+      <nav>
+        <a href="/">Utama</a>
+        <a href="/#kategori">Kategori</a>
+        {% for item in collections.halaman | sort(attribute="data.menu_order") %}
+          {% if item.data.show_in_menu %}
+            <a href="{{ item.url }}">{{ item.data.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>{{ name }}</h1>
+      <p>{{ description }}</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <h2>Artikel {{ name }}</h2>
+    <div class="grid">
+      {% set categoryName = name %}
+      {% for post in collections.artikel | reverse %}
+        {% if post.data.category == categoryName %}
+          <a class="card" href="{{ post.url }}">
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.description or post.data.summary or "Baca artikel penuh." }}</p>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </main>
+
+  <footer>© Persoalan.com</footer>
+</body>
+</html>
